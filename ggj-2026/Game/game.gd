@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 	else:
 		player.position = player.position.lerp(get_global_mouse_position(), delta * DELAY_SPEED)
 		
+
+
+func _on_mask_hitbox_area_entered(area: Area2D) -> void:
+	# TODO: instantiate new mask & play animation
+	pass # Replace with function body.

@@ -1,9 +1,5 @@
 extends Node2D
 
-@export_category("Slap area parameters")
-@export var _spawn_after_seconds : float = 0.2
-@export var _despawn_after_seconds : float = 0.2
-@export var _shape_radius : float = 50.0
 @onready var slap_component: Node2D = $"../SlapComponent"
 
 @onready var cursor: Sprite2D = $Cursor
@@ -26,7 +22,6 @@ func _create_slap_area():
 
 	_is_slapping = true
 	# create spawn timer
-	await get_tree().create_timer(_spawn_after_seconds).timeout
 	var pos = self.position
 	slap_component.slap_wave(pos)
 	# add area to scene
