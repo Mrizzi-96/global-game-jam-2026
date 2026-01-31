@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bufjlqi1dyql3"]
+
+[ext_resource type="Script" uid="uid://b08vgrym6op1l" path="res://VFXs/vfx_trail.gd" id="1_0cjdq"]
+
+[sub_resource type="Curve" id="Curve_0cjdq"]
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 10), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[node name="vfx_trail" type="Line2D" unique_id=1898208799]
+show_behind_parent = true
+width_curve = SubResource("Curve_0cjdq")
+default_color = Color(0.7948044, 0.5234342, 0.3804513, 1)
+joint_mode = 2
+script = ExtResource("1_0cjdq")
