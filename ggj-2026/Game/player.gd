@@ -5,7 +5,6 @@ extends Node2D
 @export var _despawn_after_seconds : float = 0.2
 @export var _shape_radius : float = 50.0
 
-
 @onready var cursor: Sprite2D = $Cursor
 @onready var _is_slapping : bool = false
 
@@ -16,7 +15,7 @@ func _process(_delta: float) -> void:
 # called by game manager to freeze input
 func is_slapping() -> bool:
 	return _is_slapping
-
+	
 func _create_slap_area():
 	if _is_slapping:
 		return
