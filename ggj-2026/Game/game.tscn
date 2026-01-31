@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://io3piuiaqwig"]
 
 [ext_resource type="Script" uid="uid://bd4wi6d0jufdh" path="res://Game/game.gd" id="1_1r4le"]
-[ext_resource type="Texture2D" uid="uid://cj228vh7gsbtp" path="res://UI_Misc/Kenney-Cursor-Pack/Vector/Outline/hand_open.svg" id="1_bk3v5"]
 [ext_resource type="Script" uid="uid://derkjs80w2kaw" path="res://Game/player.gd" id="3_7raqb"]
 [ext_resource type="Script" uid="uid://bghdxufftaq2c" path="res://Game/slap_component.gd" id="4_fwxkx"]
 [ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
 [ext_resource type="Script" uid="uid://bgmmsicjpwhot" path="res://Game/slap_animator_movement.gd" id="4_qmv3x"]
+[ext_resource type="Texture2D" uid="uid://brderx55d15oj" path="res://UI_Misc/Kenney-Cursor-Pack/Vector/Outline/cross_large.svg" id="6_kul4i"]
 [ext_resource type="PackedScene" uid="uid://doxjbdm63fowk" path="res://Mask/mask.tscn" id="7_oomkl"]
 [ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="8_buohc"]
 [ext_resource type="Script" uid="uid://dskoooal1y0np" path="res://Game/ui_score.gd" id="8_kul4i"]
@@ -47,13 +47,14 @@ color = Color(0.69411767, 0.44313726, 0.73333335, 0.81960785)
 z_index = 5
 position = Vector2(411, 196)
 script = ExtResource("4_fwxkx")
+_shape_radius = 100.0
 
 [node name="SlapSound" type="AudioStreamPlayer" parent="SlapComponent" unique_id=1972881461]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlapComponent" unique_id=951843046]
 visible = false
 texture_filter = 1
-scale = Vector2(0.01794355, 0.020945948)
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_7raqb")
 animation = &"slap_wave"
 frame = 1
@@ -68,10 +69,11 @@ script = ExtResource("3_7raqb")
 [node name="Cursor" type="Sprite2D" parent="Player" unique_id=1624023140]
 z_index = 10
 texture_filter = 3
-texture = ExtResource("1_bk3v5")
-centered = false
+scale = Vector2(2, 2)
+texture = ExtResource("6_kul4i")
 
 [node name="PlayerHitbox" type="Area2D" parent="Player" unique_id=1820568297]
+visible = false
 position = Vector2(17, 18)
 collision_layer = 4
 collision_mask = 8
