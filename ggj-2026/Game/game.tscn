@@ -88,6 +88,9 @@ debug_color = Color(0.9999998, 0.06363567, 0.18446675, 0.41960785)
 [node name="Mask" type="Node2D" parent="." unique_id=261007514]
 position = Vector2(967, 214)
 script = ExtResource("7_buohc")
+MIN_Y = 162
+speed_x = 400.0
+speed_y = 400.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=1973129585]
 scale = Vector2(0.34302327, 0.34302327)
@@ -99,6 +102,9 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/MaskHitbox" unique_id=294833684]
 shape = SubResource("CapsuleShape2D_oomkl")
 debug_color = Color(1, 0.0627451, 0.18431373, 0.41960785)
+
+[node name="DirectionTimer" type="Timer" parent="Mask" unique_id=2039101319]
+autostart = true
 
 [connection signal="area_entered" from="Mask/MaskHitbox" to="." method="_on_mask_hitbox_area_entered"]
 [connection signal="area_entered" from="Mask/MaskHitbox" to="Mask" method="_on_mask_hitbox_area_entered"]
