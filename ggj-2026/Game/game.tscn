@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://io3piuiaqwig"]
 
+[ext_resource type="Script" uid="uid://bd4wi6d0jufdh" path="res://Game/game.gd" id="1_1r4le"]
+[ext_resource type="Texture2D" uid="uid://cj228vh7gsbtp" path="res://UI_Misc/Kenney-Cursor-Pack/Vector/Outline/hand_open.svg" id="1_bk3v5"]
+[ext_resource type="Script" uid="uid://derkjs80w2kaw" path="res://Game/cursor.gd" id="3_7raqb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7raqb"]
+radius = 17.029387
+
 [node name="Game" type="Node2D" unique_id=891621899]
+script = ExtResource("1_1r4le")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1537328845]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.69411767, 0.44313726, 0.73333335, 0.81960785)
+
+[node name="Player" type="Node2D" parent="." unique_id=173892469]
+position = Vector2(411, 196)
+script = ExtResource("3_7raqb")
+_shape_radius = 20.0
+
+[node name="Cursor" type="Sprite2D" parent="Player" unique_id=1624023140]
+z_index = 10
+texture_filter = 3
+texture = ExtResource("1_bk3v5")
+centered = false
+
+[node name="PlayerHitbox" type="Area2D" parent="Player" unique_id=1820568297]
+position = Vector2(17, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerHitbox" unique_id=260859682]
+shape = SubResource("CircleShape2D_7raqb")
+debug_color = Color(0.9999998, 0.06363567, 0.18446675, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1464872950]
