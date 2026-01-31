@@ -2,16 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c8vxpmln2hyh8" path="res://MainMenu/main_menu.gd" id="1_ajn5b"]
 [ext_resource type="Texture2D" uid="uid://btfkpt7pf8mf" path="res://MainMenu/Assets/AI_main_menu_bg.jpeg" id="1_nhkf3"]
-[ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="2_3w4mj"]
 [ext_resource type="Theme" uid="uid://dqbdqyxqdlm7y" path="res://MainMenu/Themes/main_menu.tres" id="3_5de1l"]
+[ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="3_ajn5b"]
 
 [sub_resource type="Theme" id="Theme_nhkf3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5de1l"]
-font = ExtResource("2_3w4mj")
-font_size = 128
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" unique_id=351546442]
 layout_mode = 3
@@ -47,7 +41,7 @@ grow_horizontal = 2
 [node name="Label" type="Label" parent="TitleMargin" unique_id=1204086673]
 layout_mode = 2
 text = "MASKS OFF!"
-label_settings = SubResource("LabelSettings_5de1l")
+label_settings = ExtResource("3_ajn5b")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=167715417]
 layout_mode = 1

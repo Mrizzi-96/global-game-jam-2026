@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
 [ext_resource type="Script" uid="uid://bgmmsicjpwhot" path="res://Game/slap_animator_movement.gd" id="4_qmv3x"]
 [ext_resource type="PackedScene" uid="uid://doxjbdm63fowk" path="res://Mask/mask.tscn" id="7_oomkl"]
+[ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="8_buohc"]
+[ext_resource type="Script" uid="uid://dskoooal1y0np" path="res://Game/ui_score.gd" id="8_kul4i"]
+[ext_resource type="Script" uid="uid://b3kclqkeimo0h" path="res://Game/stopwatch.gd" id="10_7gi1t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwxkx"]
 atlas = ExtResource("4_jcm6v")
@@ -82,3 +85,56 @@ debug_color = Color(0.9999998, 0.06363567, 0.18446675, 0.41960785)
 
 [node name="Mask" parent="." unique_id=1285985187 instance=ExtResource("7_oomkl")]
 position = Vector2(967, 214)
+
+[node name="UI_SCORE" type="CanvasLayer" parent="." unique_id=1430871750]
+script = ExtResource("8_kul4i")
+
+[node name="Control" type="Control" parent="UI_SCORE" unique_id=1905588357]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_SCORE/Control" unique_id=626987699]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 32
+
+[node name="ScoreLabel" type="Label" parent="UI_SCORE/Control/MarginContainer" unique_id=27821956]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0000000000"
+label_settings = ExtResource("8_buohc")
+horizontal_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI_SCORE/Control" unique_id=724103486]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_SCORE/Control/MarginContainer2" unique_id=623831137]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TimerLabel" type="Label" parent="UI_SCORE/Control/MarginContainer2/HBoxContainer" unique_id=1041710911]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+label_settings = ExtResource("8_buohc")
+
+[node name="SecondsLabel" type="Label" parent="UI_SCORE/Control/MarginContainer2/HBoxContainer" unique_id=558535313]
+layout_mode = 2
+text = "s"
+label_settings = ExtResource("8_buohc")
+
+[node name="Stopwatch" type="Node" parent="UI_SCORE" unique_id=9191968]
+script = ExtResource("10_7gi1t")
+metadata/_custom_type_script = "uid://b3kclqkeimo0h"

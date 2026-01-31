@@ -11,6 +11,8 @@ extends Node2D
 @onready var direction_timer: Timer = $DirectionTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+signal mask_hit()
+
 # all mask types go here
 var mask_sprites : Array[String] = ["uid://cm7daqtixblby", "uid://d2v4ddyjbtc1m", "uid://duk3l5j3wbuak", "uid://cdbefamk3mep7"]
 
@@ -51,6 +53,7 @@ func _process(delta: float) -> void:
 func _on_mask_hitbox_area_entered(area: Area2D) -> void:
 	# set texture to empty
 	sprite_2d.texture = null
+	mask_hit.emit()
 	await get_tree().create_timer(0.1).timeout
 	# TODO: add animation before cancelling sprite
 	sprite_2d.texture = load(mask_sprites[randi_range(0, len(mask_sprites) -1)])
