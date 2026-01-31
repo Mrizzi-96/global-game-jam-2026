@@ -16,4 +16,3 @@ func _process(delta: float) -> void:
 		player.position = player.position.lerp(get_global_mouse_position(), delta * FOLLOW_SPEED)
 	else:
 		player.position = player.position.lerp(get_global_mouse_position(), delta * DELAY_SPEED)
-		

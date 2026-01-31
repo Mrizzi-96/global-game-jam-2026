@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://6w5rg4wqlh7s"]
+
+[ext_resource type="Texture2D" uid="uid://btfkpt7pf8mf" path="res://MainMenu/Assets/AI_main_menu_bg.jpeg" id="1_mpypm"]
+[ext_resource type="Script" uid="uid://bbg1hetl5s22" path="res://GameOver/game_over.gd" id="1_ou0ni"]
+[ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="2_756py"]
+[ext_resource type="Theme" uid="uid://dqbdqyxqdlm7y" path="res://MainMenu/Themes/main_menu.tres" id="3_ou0ni"]
+[ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="4_756py"]
+
+[sub_resource type="Theme" id="Theme_qcn1q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpypm"]
+font = ExtResource("4_756py")
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_756py"]
+font = ExtResource("4_756py")
+font_size = 256
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Control" unique_id=1402275885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ou0ni")
+
+[node name="background" type="TextureRect" parent="." unique_id=1085683934]
+modulate = Color(1, 1, 1, 0.72156864)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qcn1q")
+texture = ExtResource("1_mpypm")
+expand_mode = 1
+
+[node name="TitleMargin" type="MarginContainer" parent="." unique_id=997141007]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TitleMargin" unique_id=183594480]
+layout_mode = 2
+text = "GAME OVER!"
+label_settings = ExtResource("2_756py")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1214433163]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = 40.0
+offset_right = 233.5
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=925432185]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1602584532]
+layout_mode = 2
+theme = ExtResource("3_ou0ni")
+text = "RETRY"
+
+[node name="MainMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=474959822]
+layout_mode = 2
+theme = ExtResource("3_ou0ni")
+text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="." unique_id=888465509]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -287.0
+offset_right = 182.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOUR SCORE IS"
+label_settings = SubResource("LabelSettings_mpypm")
+horizontal_alignment = 1
+
+[node name="TotalScoreLabel" type="Label" parent="." unique_id=1430524241]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -253.0
+offset_right = 182.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_756py")
+horizontal_alignment = 1
+
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_button_up"]

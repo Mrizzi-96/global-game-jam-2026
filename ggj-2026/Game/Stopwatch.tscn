@@ -4,3 +4,5 @@
 
 [node name="Stopwatch" type="Node" unique_id=1786078086 groups=["stopwatch"]]
 script = ExtResource("1_lds77")
+
+[node name="StopwatchTimer" type="Timer" parent="." unique_id=363677112]

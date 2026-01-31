@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://doxjbdm63fowk" path="res://Mask/mask.tscn" id="7_oomkl"]
 [ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="8_buohc"]
 [ext_resource type="Script" uid="uid://dskoooal1y0np" path="res://Game/ui_score.gd" id="8_kul4i"]
-[ext_resource type="Script" uid="uid://b3kclqkeimo0h" path="res://Game/stopwatch.gd" id="10_7gi1t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwxkx"]
 atlas = ExtResource("4_jcm6v")
@@ -135,6 +134,8 @@ layout_mode = 2
 text = "s"
 label_settings = ExtResource("8_buohc")
 
-[node name="Stopwatch" type="Node" parent="UI_SCORE" unique_id=9191968]
-script = ExtResource("10_7gi1t")
-metadata/_custom_type_script = "uid://b3kclqkeimo0h"
+[node name="CountDownTimer" type="Timer" parent="UI_SCORE" unique_id=1170267356]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="UI_SCORE/CountDownTimer" to="UI_SCORE" method="_on_count_down_timer_timeout"]
