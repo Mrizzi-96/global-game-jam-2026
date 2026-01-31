@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://dqbdqyxqdlm7y"]
+
+[ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="1_w833s"]
+[ext_resource type="StyleBox" uid="uid://br66r41iwjhqn" path="res://MainMenu/Themes/button_pressed.tres" id="2_ljy1j"]
+[ext_resource type="StyleBox" uid="uid://bp075qebkhig6" path="res://MainMenu/Themes/button_hover_pressed.tres" id="2_slljn"]
+[ext_resource type="StyleBox" uid="uid://d0woryopalwj0" path="res://MainMenu/Themes/button_normal.tres" id="3_ljy1j"]
+
+[resource]
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_w833s")
+Button/styles/hover = ExtResource("2_slljn")
+Button/styles/normal = ExtResource("3_ljy1j")
+Button/styles/pressed = ExtResource("2_ljy1j")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ca301koyojh5p"]
+
+[ext_resource type="Texture2D" uid="uid://btfkpt7pf8mf" path="res://MainMenu/Assets/AI_main_menu_bg.jpeg" id="1_nhkf3"]
+[ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="2_3w4mj"]
+[ext_resource type="Theme" uid="uid://dqbdqyxqdlm7y" path="res://MainMenu/Themes/main_menu.tres" id="3_5de1l"]
+
+[sub_resource type="Theme" id="Theme_nhkf3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5de1l"]
+font = ExtResource("2_3w4mj")
+font_size = 128
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control" unique_id=351546442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="." unique_id=622300512]
+modulate = Color(1, 1, 1, 0.72156864)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nhkf3")
+texture = ExtResource("1_nhkf3")
+expand_mode = 1
+
+[node name="TitleMargin" type="MarginContainer" parent="." unique_id=1864882368]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TitleMargin" unique_id=1204086673]
+layout_mode = 2
+text = "MASKS OFF!"
+label_settings = SubResource("LabelSettings_5de1l")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=167715417]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -5.0
+offset_right = 63.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1297084198]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=835043313]
+layout_mode = 2
+theme = ExtResource("3_5de1l")
+text = "PLAY"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1360198791]
+layout_mode = 2
+theme = ExtResource("3_5de1l")
+text = "QUIT"
