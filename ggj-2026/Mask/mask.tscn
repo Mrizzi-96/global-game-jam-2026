@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3c0kjjvcca1o" path="res://Game/mask.gd" id="1_bp1os"]
 [ext_resource type="Texture2D" uid="uid://cm7daqtixblby" path="res://mask_assets/sprt_mask01.png" id="2_cq5j3"]
+[ext_resource type="PackedScene" path="res://VFXs/vfx_trail.tscn" id="3_cq5j3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oomkl"]
 radius = 110.0
@@ -26,5 +27,7 @@ debug_color = Color(1, 0.0627451, 0.18431373, 0.41960785)
 
 [node name="DirectionTimer" type="Timer" parent="." unique_id=320102664]
 autostart = true
+
+[node name="vfx_trail" parent="." unique_id=1898208799 instance=ExtResource("3_cq5j3")]
 
 [connection signal="area_entered" from="MaskHitbox" to="." method="_on_mask_hitbox_area_entered"]
