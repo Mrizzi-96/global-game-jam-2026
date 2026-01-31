@@ -3,6 +3,31 @@
 [ext_resource type="Script" uid="uid://bd4wi6d0jufdh" path="res://Game/game.gd" id="1_1r4le"]
 [ext_resource type="Texture2D" uid="uid://cj228vh7gsbtp" path="res://UI_Misc/Kenney-Cursor-Pack/Vector/Outline/hand_open.svg" id="1_bk3v5"]
 [ext_resource type="Script" uid="uid://derkjs80w2kaw" path="res://Game/player.gd" id="3_7raqb"]
+[ext_resource type="Script" uid="uid://bghdxufftaq2c" path="res://Game/slap_component.gd" id="4_fwxkx"]
+[ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
+[ext_resource type="Script" uid="uid://bgmmsicjpwhot" path="res://Game/slap_animator_movement.gd" id="4_qmv3x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwxkx"]
+atlas = ExtResource("4_jcm6v")
+region = Rect2(0, 0, 2480, 1480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcm6v"]
+atlas = ExtResource("4_jcm6v")
+region = Rect2(2480, 0, 2480, 1480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7raqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwxkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcm6v")
+}],
+"loop": false,
+"name": &"slap_wave",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7raqb"]
 radius = 17.029387
@@ -14,6 +39,22 @@ script = ExtResource("1_1r4le")
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.69411767, 0.44313726, 0.73333335, 0.81960785)
+
+[node name="SlapComponent" type="Node2D" parent="." unique_id=1474163095]
+position = Vector2(411, 196)
+script = ExtResource("4_fwxkx")
+
+[node name="SlapSound" type="AudioStreamPlayer" parent="SlapComponent" unique_id=1972881461]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlapComponent" unique_id=951843046]
+visible = false
+texture_filter = 1
+scale = Vector2(0.01794355, 0.020945948)
+sprite_frames = SubResource("SpriteFrames_7raqb")
+animation = &"slap_wave"
+frame = 1
+frame_progress = 1.0
+script = ExtResource("4_qmv3x")
 
 [node name="Player" type="Node2D" parent="." unique_id=173892469]
 position = Vector2(411, 196)
