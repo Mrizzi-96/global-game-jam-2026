@@ -9,7 +9,11 @@ extends Node2D
 @export var speed_y : float = 0.0
 
 @onready var direction_timer: Timer = $DirectionTimer
-	
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+# all mask types go here
+var mask_sprites : Array[String] = ["uid://cm7daqtixblby", "uid://d2v4ddyjbtc1m", "uid://duk3l5j3wbuak", "uid://cdbefamk3mep7"]
+
 var direction_x: float = 1.0  # 1 for right, -1 for left
 var direction_y: float = 1.0  # 1 for down, -1 for up
 var _current_max_x : int
@@ -45,7 +49,11 @@ func _process(delta: float) -> void:
 		direction_y = 1  # Reset to moving down 
 
 func _on_mask_hitbox_area_entered(area: Area2D) -> void:
-	queue_free()
+	# set texture to empty
+	sprite_2d.texture = null
+	await get_tree().create_timer(0.1).timeout
+	# TODO: add animation before cancelling sprite
+	sprite_2d.texture = load(mask_sprites[randi_range(0, len(mask_sprites) -1)])
 	
 func _on_direction_timer_timeout():
 	# get random number between max and min (add 100 to min to avoid small numbers

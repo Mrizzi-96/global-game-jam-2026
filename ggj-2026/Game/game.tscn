@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://bghdxufftaq2c" path="res://Game/slap_component.gd" id="4_fwxkx"]
 [ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
 [ext_resource type="Script" uid="uid://bgmmsicjpwhot" path="res://Game/slap_animator_movement.gd" id="4_qmv3x"]
-[ext_resource type="Script" uid="uid://c3c0kjjvcca1o" path="res://Game/mask.gd" id="7_buohc"]
-[ext_resource type="Texture2D" uid="uid://cm7daqtixblby" path="res://mask_assets/sprt_mask01.png" id="7_oomkl"]
+[ext_resource type="PackedScene" uid="uid://doxjbdm63fowk" path="res://Mask/mask.tscn" id="7_oomkl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwxkx"]
 atlas = ExtResource("4_jcm6v")
@@ -33,10 +32,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7raqb"]
 radius = 17.029387
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oomkl"]
-radius = 110.0
-height = 394.0
 
 [node name="Game" type="Node2D" unique_id=891621899]
 script = ExtResource("1_1r4le")
@@ -85,26 +80,5 @@ debug_color = Color(0.9999998, 0.06363567, 0.18446675, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=1464872950]
 
-[node name="Mask" type="Node2D" parent="." unique_id=261007514]
+[node name="Mask" parent="." unique_id=1285985187 instance=ExtResource("7_oomkl")]
 position = Vector2(967, 214)
-script = ExtResource("7_buohc")
-MIN_Y = 162
-speed_x = 400.0
-speed_y = 400.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Mask" unique_id=1973129585]
-scale = Vector2(0.34302327, 0.34302327)
-texture = ExtResource("7_oomkl")
-
-[node name="MaskHitbox" type="Area2D" parent="Mask" unique_id=1669106096]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask/MaskHitbox" unique_id=294833684]
-shape = SubResource("CapsuleShape2D_oomkl")
-debug_color = Color(1, 0.0627451, 0.18431373, 0.41960785)
-
-[node name="DirectionTimer" type="Timer" parent="Mask" unique_id=2039101319]
-autostart = true
-
-[connection signal="area_entered" from="Mask/MaskHitbox" to="." method="_on_mask_hitbox_area_entered"]
-[connection signal="area_entered" from="Mask/MaskHitbox" to="Mask" method="_on_mask_hitbox_area_entered"]
