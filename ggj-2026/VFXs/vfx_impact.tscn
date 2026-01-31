@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bcoop25j3iuh3"]
 
+[ext_resource type="Texture2D" uid="uid://cgaaiih46ubrs" path="res://VFXs/part_star01.png" id="1_yhdc5"]
+
 [sub_resource type="Curve" id="Curve_2b7x6"]
 _limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 2), 0.0, 0.13812572, 0, 0, Vector2(1, 0), -6.0241256, 0.0, 0, 0]
@@ -8,21 +10,24 @@ point_count = 2
 [node name="vfx_impact" type="Node2D" unique_id=1175290597]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1602286316]
-lifetime = 2.0
-speed_scale = 3.0
+texture = ExtResource("1_yhdc5")
+lifetime = 3.0
+speed_scale = 5.0
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 1.0
 emission_shape = 1
-emission_sphere_radius = 10.0
+emission_sphere_radius = 128.0
 direction = Vector2(20, 20)
 spread = 180.0
 gravity = Vector2(0, 10)
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
 angular_velocity_min = -20.0
 angular_velocity_max = 10.0
 linear_accel_max = 10.0
 tangential_accel_min = -10.0
 tangential_accel_max = 10.0
+scale_amount_min = 0.1
+scale_amount_max = 0.1
 scale_amount_curve = SubResource("Curve_2b7x6")
