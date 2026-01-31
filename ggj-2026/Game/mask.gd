@@ -10,8 +10,10 @@ extends Node2D
 
 @onready var direction_timer: Timer = $DirectionTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var vfx_impact: Node2D = $vfx_impact
 
 signal mask_hit()
+@onready var mask_hitbox: Area2D = $MaskHitbox
 
 # all mask types go here
 var mask_sprites : Array[String] = ["uid://cm7daqtixblby", "uid://d2v4ddyjbtc1m", "uid://duk3l5j3wbuak", "uid://cdbefamk3mep7"]
@@ -51,12 +53,20 @@ func _process(delta: float) -> void:
 		direction_y = 1  # Reset to moving down 
 
 func _on_mask_hitbox_area_entered(area: Area2D) -> void:
-	# set texture to empty
-	sprite_2d.texture = null
+	_impact_feedback(area.position)
 	mask_hit.emit()
+	# delay timer
 	await get_tree().create_timer(0.1).timeout
-	# TODO: add animation before cancelling sprite
+	sprite_2d.material.set_shader_parameter("lerp_percent", 0)
+	
 	sprite_2d.texture = load(mask_sprites[randi_range(0, len(mask_sprites) -1)])
+
+func _impact_feedback(impact_position: Vector2) -> void:
+	# flash texture white
+	sprite_2d.material.set_shader_parameter("lerp_percent", 1.0)
+	# add impact particles
+	vfx_impact.emit_impact_particles(impact_position)
+	pass
 	
 func _on_direction_timer_timeout():
 	# get random number between max and min (add 100 to min to avoid small numbers

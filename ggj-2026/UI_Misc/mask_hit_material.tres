@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://35hbj1pobxh4"]
+
+[ext_resource type="Shader" uid="uid://cumov8q0doywp" path="res://Mask/mask.gdshader" id="1_xldvq"]
+
+[resource]
+shader = ExtResource("1_xldvq")
+shader_parameter/lerp_percent = 0.0
