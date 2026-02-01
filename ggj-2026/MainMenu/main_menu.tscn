@@ -31,11 +31,12 @@ expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="background" unique_id=1088074218]
 z_index = -10
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 1924.0
-offset_bottom = 1084.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.1843862, 0.01787167, 0.2889699, 1)
 
 [node name="TitleMargin" type="MarginContainer" parent="." unique_id=1864882368]
@@ -79,10 +80,16 @@ layout_mode = 2
 theme = ExtResource("3_5de1l")
 text = "PLAY"
 
+[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer" unique_id=686333340]
+layout_mode = 2
+theme = ExtResource("3_5de1l")
+text = "CREDITS"
+
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1360198791]
 layout_mode = 2
 theme = ExtResource("3_5de1l")
 text = "QUIT"
 
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_button_up"]
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_button_up"]
