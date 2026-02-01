@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://deu5xfi214nev"]
+
+[ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="1_36x48"]
+
+[resource]
+font = ExtResource("1_36x48")
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
