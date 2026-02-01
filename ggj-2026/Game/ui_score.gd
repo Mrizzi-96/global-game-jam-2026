@@ -8,7 +8,7 @@ var game_over_scene = "uid://6w5rg4wqlh7s"
 
 func _ready() -> void:
 	mask.mask_hit.connect(_on_mask_hit)
-	score_label.text = str(score)
+	update_score_label(score)
 	count_down_timer.start()
 
 func _process(delta: float) -> void:
@@ -26,7 +26,12 @@ func time_to_string() -> String:
 func update_timer_label_text():
 	timer_label.text = time_to_string()
 
+func update_score_label(score):
+	var format_string = "%02d"
+	var result = format_string % [score]
+	score_label.text = result
+
 func _on_mask_hit():
 	score += 1
-	score_label.text = str(score)
+	update_score_label(score)
 	Global.set_total_score(score)
