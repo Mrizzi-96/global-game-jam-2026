@@ -50,7 +50,6 @@ offset_bottom = 319.0
 grow_horizontal = 2
 
 [node name="background2" type="TextureRect" parent="TitleMargin" unique_id=37381247]
-modulate = Color(1, 1, 1, 0.72156864)
 z_index = -5
 layout_mode = 2
 size_flags_vertical = 0
