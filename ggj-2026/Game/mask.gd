@@ -14,9 +14,11 @@ extends Node2D
 @onready var direction_timer: Timer = $DirectionTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var vfx_impact: Node2D = $vfx_impact
+@onready var impact_sound: AudioStreamPlayer = $ImpactSound
 
 signal mask_hit()
 @onready var mask_hitbox: Area2D = $MaskHitbox
+@onready var slap_player: AudioStreamPlayer = $"../SlapPlayer"
 
 # all mask types go here
 var mask_sprites : Array[String] = [
@@ -80,6 +82,8 @@ func _impact_feedback(impact_position: Vector2) -> void:
 	sprite_2d.material.set_shader_parameter("lerp_percent", 1.0)
 	# add impact particles
 	vfx_impact.emit_impact_particles(impact_position)
+	# play impact sound
+	impact_sound.play()
 	pass
 	
 func _on_direction_timer_timeout():
