@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://io3piuiaqwig"]
 
 [ext_resource type="Script" uid="uid://bd4wi6d0jufdh" path="res://Game/game.gd" id="1_1r4le"]
-[ext_resource type="PackedScene" uid="uid://b47gppvvd4ru0" path="res://Game/ghosting_node.tscn" id="3_7gi1t"]
 [ext_resource type="Script" uid="uid://derkjs80w2kaw" path="res://Game/player.gd" id="3_7raqb"]
 [ext_resource type="Script" uid="uid://bghdxufftaq2c" path="res://Game/slap_component.gd" id="4_fwxkx"]
 [ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
@@ -50,7 +49,6 @@ z_index = 5
 position = Vector2(411, 196)
 script = ExtResource("4_fwxkx")
 _shape_radius = 100.0
-ghost_node = ExtResource("3_7gi1t")
 
 [node name="SlapSound" type="AudioStreamPlayer" parent="SlapComponent" unique_id=1972881461]
 
@@ -65,7 +63,7 @@ frame_progress = 1.0
 script = ExtResource("4_qmv3x")
 
 [node name="GhostTimer" type="Timer" parent="SlapComponent" unique_id=1827245141]
-wait_time = 0.15
+wait_time = 0.05
 
 [node name="Player" type="Node2D" parent="." unique_id=173892469]
 z_index = 10
@@ -87,6 +85,9 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerHitbox" unique_id=260859682]
 shape = SubResource("CircleShape2D_7raqb")
 debug_color = Color(0.9999998, 0.06363567, 0.18446675, 0.41960785)
+
+[node name="SlapCooldown" type="Timer" parent="Player" unique_id=2108972013]
+autostart = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1464872950]
 
