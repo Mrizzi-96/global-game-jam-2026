@@ -22,10 +22,18 @@ func slap_wave(slap_position : Vector2):
 	# starts animation and updates each frame position of sprite
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play(slap_wave_name)
+	# scale hand up to the scale ref
+	set_hand_scale_to(Vector2(0.18, 0.18), 0.15)
+	animated_sprite_2d.scale = Vector2(0.04, 0.04)
 	slap_player.play()
+	
 	# spawn afterimage
 	spawn_afterimage()
 	create_slap_area(slap_position)
+
+func set_hand_scale_to(scale_ref : Vector2, time : float = 0.1):
+	var scale_tween = get_tree().create_tween()
+	scale_tween.tween_property(self.animated_sprite_2d, "scale",scale_ref, time)
 
 func spawn_afterimage():
 	# spawn scene
@@ -55,6 +63,9 @@ func create_slap_area(pos : Vector2) -> void:
 	
 func _on_despawn_timer_timeout(slap_area : Area2D):
 	slap_area.queue_free()
+	# scale hand up to the scale ref
+	set_hand_scale_to(Vector2(0.01, 0.01), 0.15)
+	animated_sprite_2d.scale = Vector2(0.18, 0.18)
 	#player.set_is_slapping(false)
 	
 func _on_slap_animation_finished():

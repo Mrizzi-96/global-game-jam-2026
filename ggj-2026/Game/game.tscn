@@ -53,13 +53,12 @@ vfx_afterimage_scene = ExtResource("3_7gi1t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SlapComponent" unique_id=951843046]
 visible = false
 texture_filter = 1
-scale = Vector2(0.18, 0.18)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_7raqb")
 animation = &"slap_wave"
 frame = 1
 frame_progress = 1.0
 script = ExtResource("4_qmv3x")
-SPEED = 1000.0
 
 [node name="Player" type="Node2D" parent="." unique_id=173892469]
 z_index = 10
