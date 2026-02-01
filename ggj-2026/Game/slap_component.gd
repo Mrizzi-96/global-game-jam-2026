@@ -9,6 +9,8 @@ extends Node2D
 @export var _despawn_delay : float = 0.2
 @export var _shape_radius : float = 50.0
 
+@export_category("Afterimage VFX")
+@export var vfx_afterimage_scene: PackedScene
 
 func _ready() -> void:
 	animated_sprite_2d.animation_finished.connect(_on_slap_animation_finished)
@@ -19,8 +21,15 @@ func slap_wave(slap_position : Vector2):
 	# starts animation and updates each frame position of sprite
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play(slap_wave_name)
+	# spawn afterimage
+	spawn_afterimage()
 	create_slap_area(slap_position)
 
+func spawn_afterimage():
+	# spawn scene
+	var afterimage = vfx_afterimage_scene.instantiate()
+	add_child(afterimage)
+	
 func create_slap_area(pos : Vector2) -> void:
 		# create collision area in player pos
 	var slap_area = Area2D.new()

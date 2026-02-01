@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://io3piuiaqwig"]
 
 [ext_resource type="Script" uid="uid://bd4wi6d0jufdh" path="res://Game/game.gd" id="1_1r4le"]
+[ext_resource type="PackedScene" uid="uid://cntj4tdetuw3x" path="res://VFXs/vfx_afterimage.tscn" id="3_7gi1t"]
 [ext_resource type="Script" uid="uid://derkjs80w2kaw" path="res://Game/player.gd" id="3_7raqb"]
 [ext_resource type="Script" uid="uid://bghdxufftaq2c" path="res://Game/slap_component.gd" id="4_fwxkx"]
 [ext_resource type="Texture2D" uid="uid://cu5dakuklq6mg" path="res://slap_assets/sprt_slap.png" id="4_jcm6v"]
@@ -49,6 +50,7 @@ z_index = 5
 position = Vector2(411, 196)
 script = ExtResource("4_fwxkx")
 _shape_radius = 100.0
+vfx_afterimage_scene = ExtResource("3_7gi1t")
 
 [node name="SlapSound" type="AudioStreamPlayer" parent="SlapComponent" unique_id=1972881461]
 
@@ -61,9 +63,6 @@ animation = &"slap_wave"
 frame = 1
 frame_progress = 1.0
 script = ExtResource("4_qmv3x")
-
-[node name="GhostTimer" type="Timer" parent="SlapComponent" unique_id=1827245141]
-wait_time = 0.05
 
 [node name="Player" type="Node2D" parent="." unique_id=173892469]
 z_index = 10
@@ -147,5 +146,4 @@ label_settings = ExtResource("8_buohc")
 wait_time = 30.0
 one_shot = true
 
-[connection signal="timeout" from="SlapComponent/GhostTimer" to="SlapComponent" method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="UI_SCORE/CountDownTimer" to="UI_SCORE" method="_on_count_down_timer_timeout"]
