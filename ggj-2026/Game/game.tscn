@@ -138,7 +138,7 @@ text = "s"
 label_settings = ExtResource("8_buohc")
 
 [node name="CountDownTimer" type="Timer" parent="UI_SCORE" unique_id=1170267356]
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 
 [connection signal="timeout" from="UI_SCORE/CountDownTimer" to="UI_SCORE" method="_on_count_down_timer_timeout"]

@@ -19,7 +19,17 @@ signal mask_hit()
 @onready var mask_hitbox: Area2D = $MaskHitbox
 
 # all mask types go here
-var mask_sprites : Array[String] = ["uid://cm7daqtixblby", "uid://d2v4ddyjbtc1m", "uid://duk3l5j3wbuak", "uid://cdbefamk3mep7"]
+var mask_sprites : Array[String] = [
+"uid://cm7daqtixblby", 
+"uid://d2v4ddyjbtc1m", 
+"uid://duk3l5j3wbuak", 
+"uid://cdbefamk3mep7",
+"uid://b5g7iioj3mcuf",
+"uid://cb6s5u76kvn2e",
+"uid://dkr2w76ih0n4h",
+"uid://sl7dwldnhxm3",
+"uid://bgk76nvf3ii58",
+]
 
 var direction_x: float = 1.0  # 1 for right, -1 for left
 var direction_y: float = 1.0  # 1 for down, -1 for up
