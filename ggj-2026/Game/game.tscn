@@ -11,6 +11,7 @@
 [ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="8_buohc"]
 [ext_resource type="Script" uid="uid://dskoooal1y0np" path="res://Game/ui_score.gd" id="8_kul4i"]
 [ext_resource type="AudioStream" uid="uid://drx82i4kln3b7" path="res://slap_assets/sfx_slap_wave.wav" id="11_fsxsm"]
+[ext_resource type="Texture2D" uid="uid://b8wo55mce1of8" path="res://GameOver/sprt_bg.png" id="12_glinl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwxkx"]
 atlas = ExtResource("4_jcm6v")
@@ -39,12 +40,6 @@ radius = 17.029387
 
 [node name="Game" type="Node2D" unique_id=891621899]
 script = ExtResource("1_1r4le")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1537328845]
-z_index = -100
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.69411767, 0.44313726, 0.73333335, 0.81960785)
 
 [node name="SlapComponent" type="Node2D" parent="." unique_id=1474163095]
 z_index = 5
@@ -151,6 +146,26 @@ one_shot = true
 
 [node name="SlapPlayer" type="AudioStreamPlayer" parent="." unique_id=2116125551]
 stream = ExtResource("11_fsxsm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1558052563]
+modulate = Color(1, 1, 1, 0.7411765)
+show_behind_parent = true
+z_index = -100
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_glinl")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=1708481259]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1843862, 0.01787167, 0.2889699, 1)
 
 [connection signal="timeout" from="Player/SlapCooldown" to="Player" method="_on_slap_cooldown_timeout"]
 [connection signal="timeout" from="UI_SCORE/CountDownTimer" to="UI_SCORE" method="_on_count_down_timer_timeout"]
