@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://c3c0kjjvcca1o" path="res://Game/mask.gd" id="1_bp1os"]
 [ext_resource type="Texture2D" uid="uid://cm7daqtixblby" path="res://mask_assets/sprt_mask01.png" id="2_cq5j3"]
 [ext_resource type="Material" uid="uid://35hbj1pobxh4" path="res://UI_Misc/mask_hit_material.tres" id="2_d7d1v"]
-[ext_resource type="PackedScene" path="res://VFXs/vfx_trail.tscn" id="3_cq5j3"]
+[ext_resource type="PackedScene" uid="uid://b3qkdwxxlqu0q" path="res://VFXs/vfx_maskoff.tscn" id="2_jy6tj"]
+[ext_resource type="PackedScene" uid="uid://bufjlqi1dyql3" path="res://VFXs/vfx_trail.tscn" id="3_cq5j3"]
 [ext_resource type="PackedScene" uid="uid://bcoop25j3iuh3" path="res://VFXs/vfx_impact.tscn" id="5_jy6tj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oomkl"]
@@ -15,6 +16,7 @@ script = ExtResource("1_bp1os")
 MIN_Y = 162
 speed_x = 400.0
 speed_y = 400.0
+vfx_maskoff = ExtResource("2_jy6tj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1786529888]
 material = ExtResource("2_d7d1v")

@@ -8,6 +8,9 @@ extends Node2D
 @export var speed_x : float = 0.0
 @export var speed_y : float = 0.0
 
+@export_category("VFX effects")
+@export var vfx_maskoff : PackedScene
+
 @onready var direction_timer: Timer = $DirectionTimer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var vfx_impact: Node2D = $vfx_impact
@@ -54,6 +57,7 @@ func _process(delta: float) -> void:
 
 func _on_mask_hitbox_area_entered(area: Area2D) -> void:
 	_impact_feedback(area.position)
+	mask_off(sprite_2d.texture)
 	mask_hit.emit()
 	# delay timer
 	await get_tree().create_timer(0.1).timeout
@@ -76,3 +80,8 @@ func _on_direction_timer_timeout():
 	_current_min_y = randi_range(MIN_Y, _current_max_y)
 	speed_x = randi_range(100, 1000)
 	speed_y = randi_range(100, 1000)
+
+func mask_off(texture : Texture2D):
+	var scene = vfx_maskoff.instantiate()
+	add_child(scene)
+	scene.spawn_particle(texture)

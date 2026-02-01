@@ -39,6 +39,7 @@ radius = 17.029387
 script = ExtResource("1_1r4le")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1537328845]
+z_index = -100
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.69411767, 0.44313726, 0.73333335, 0.81960785)
