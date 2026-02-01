@@ -3,6 +3,7 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var slap_wave_name = "slap_wave" 
 @onready var player: Node2D = $"../Player"
+@onready var slap_player: AudioStreamPlayer = $"../SlapPlayer"
 
 @export_category("Slapping area vars")
 @export var _spawn_delay : float = 0.1
@@ -21,6 +22,7 @@ func slap_wave(slap_position : Vector2):
 	# starts animation and updates each frame position of sprite
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play(slap_wave_name)
+	slap_player.play()
 	# spawn afterimage
 	spawn_afterimage()
 	create_slap_area(slap_position)
@@ -53,7 +55,7 @@ func create_slap_area(pos : Vector2) -> void:
 	
 func _on_despawn_timer_timeout(slap_area : Area2D):
 	slap_area.queue_free()
-	player.set_is_slapping(false)
+	#player.set_is_slapping(false)
 	
 func _on_slap_animation_finished():
 	animated_sprite_2d.visible = false

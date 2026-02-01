@@ -1,12 +1,14 @@
 extends Node2D
 
 @onready var slap_component: Node2D = $"../SlapComponent"
+@onready var slap_cooldown: Timer = $SlapCooldown
+@onready var slap_player: AudioStreamPlayer = $"../SlapPlayer"
 
 @onready var cursor: Sprite2D = $Cursor
 @onready var _is_slapping : bool = false
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("slap"):
+	if Input.is_action_just_released("slap") and !is_slapping():
 		_create_slap_area()
 
 # called by game manager to freeze input
@@ -25,6 +27,6 @@ func _create_slap_area():
 	var pos = self.position
 	slap_component.slap_wave(pos)
 	# add area to scene
-	# TODO: slap_component.play_sound(slap_impact)
-	
-	
+
+func _on_slap_cooldown_timeout() -> void:
+	_is_slapping = false

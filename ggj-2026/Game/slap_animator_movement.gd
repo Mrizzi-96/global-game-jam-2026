@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
-const SPEED : float = 600
+@export var SPEED : float = 600
 
 @onready var slap_offset = Vector2(100,0)
 
