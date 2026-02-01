@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bbmhnmsp7nvt6" path="res://Credits/credits.gd" id="1_jbgmt"]
 [ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="2_c5ffn"]
+[ext_resource type="Texture2D" uid="uid://b8wo55mce1of8" path="res://GameOver/sprt_bg.png" id="2_ykgdt"]
 [ext_resource type="LabelSettings" uid="uid://deu5xfi214nev" path="res://Credits/credits_label_settings.tres" id="3_xrj5f"]
+[ext_resource type="Texture2D" uid="uid://cwu0akfa65vqo" path="res://Credits/team_edameme_logo.png" id="4_ubyop"]
 [ext_resource type="LabelSettings" uid="uid://cvuwr5wtq53wj" path="res://Credits/credits_assets_by_label_settings.tres" id="4_ykgdt"]
 [ext_resource type="Theme" uid="uid://dqbdqyxqdlm7y" path="res://MainMenu/Themes/main_menu.tres" id="5_ubyop"]
 
@@ -22,9 +24,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_ykgdt")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="background" unique_id=2144612475]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +36,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18431373, 0.019607844, 0.2901961, 1)
+
+[node name="Team Logo" type="TextureRect" parent="." unique_id=737539656]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.238
+anchor_right = 0.5
+anchor_bottom = 0.238
+offset_left = -178.0
+offset_top = -63.04001
+offset_right = 287.6936
+offset_bottom = 240.30539
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.76316535, 0.76316535)
+texture = ExtResource("4_ubyop")
+expand_mode = 1
 
 [node name="CreditsTitleMarginContainer" type="MarginContainer" parent="." unique_id=2146401978]
 layout_mode = 1
@@ -55,39 +76,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -385.0
+offset_top = -129.0
+offset_right = 386.0
+offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CreditsCenterContainer" unique_id=1566314556]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=1742901633]
-layout_mode = 2
-text = "<username 1> - <role>"
-label_settings = ExtResource("3_xrj5f")
-
-[node name="Label2" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=373207012]
-layout_mode = 2
-text = "<username 2> - <role>"
-label_settings = ExtResource("3_xrj5f")
-
 [node name="Label3" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=602307933]
 layout_mode = 2
-text = "<username 3> - <role>"
+text = "JSmash_salted - Game Design"
 label_settings = ExtResource("3_xrj5f")
 
 [node name="Label4" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=2127551046]
 layout_mode = 2
-text = "<username 4> - <role>"
+text = "Mark7713 - Programming"
+label_settings = ExtResource("3_xrj5f")
+
+[node name="Label2" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=373207012]
+layout_mode = 2
+text = "TucumetaL - UI & programming"
 label_settings = ExtResource("3_xrj5f")
 
 [node name="Label5" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=1369805839]
 layout_mode = 2
-text = "<username 5> - <role>"
+text = "logansan - 2D art"
+label_settings = ExtResource("3_xrj5f")
+
+[node name="Label" type="Label" parent="CreditsCenterContainer/VBoxContainer" unique_id=1742901633]
+layout_mode = 2
+text = "FlareV - 2D art"
 label_settings = ExtResource("3_xrj5f")
 
 [node name="AssetsByMarginContainer" type="MarginContainer" parent="." unique_id=1266068775]
@@ -97,8 +118,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -450.0
+offset_top = -262.0
+offset_right = -148.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 50
@@ -114,19 +136,19 @@ label_settings = ExtResource("3_xrj5f")
 
 [node name="Label" type="Label" parent="AssetsByMarginContainer/VBoxContainer" unique_id=299214277]
 layout_mode = 2
-text = "blabla"
+text = "Kenney"
 label_settings = ExtResource("4_ykgdt")
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="AssetsByMarginContainer/VBoxContainer" unique_id=597653718]
 layout_mode = 2
-text = "blabla"
+text = "Geoff Bremner Audio"
 label_settings = ExtResource("4_ykgdt")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="AssetsByMarginContainer/VBoxContainer" unique_id=146975597]
 layout_mode = 2
-text = "blabla"
+text = "CGEffex"
 label_settings = ExtResource("4_ykgdt")
 horizontal_alignment = 1
 
