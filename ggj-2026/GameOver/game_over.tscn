@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6w5rg4wqlh7s"]
 
-[ext_resource type="Texture2D" uid="uid://btfkpt7pf8mf" path="res://MainMenu/Assets/AI_main_menu_bg.jpeg" id="1_mpypm"]
 [ext_resource type="Script" uid="uid://bbg1hetl5s22" path="res://GameOver/game_over.gd" id="1_ou0ni"]
 [ext_resource type="LabelSettings" uid="uid://coh1qple2f646" path="res://UI_Misc/title_label_settings.tres" id="2_756py"]
+[ext_resource type="Texture2D" uid="uid://d3y71sumpt11a" path="res://MainMenu/Assets/sprt_bg.png" id="2_ou0ni"]
 [ext_resource type="Theme" uid="uid://dqbdqyxqdlm7y" path="res://MainMenu/Themes/main_menu.tres" id="3_ou0ni"]
 [ext_resource type="FontFile" uid="uid://wa5g4dy6devl" path="res://MainMenu/Assets/NightClown-L3lZn.ttf" id="4_756py"]
 
@@ -38,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qcn1q")
-texture = ExtResource("1_mpypm")
+texture = ExtResource("2_ou0ni")
 expand_mode = 1
 
 [node name="TitleMargin" type="MarginContainer" parent="." unique_id=997141007]
