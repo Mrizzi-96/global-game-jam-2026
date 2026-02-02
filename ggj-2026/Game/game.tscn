@@ -243,5 +243,10 @@ texture_progress = SubResource("AtlasTexture_rxmp4")
 script = ExtResource("13_qlwvw")
 count_down_timer = NodePath("../../../../UI_SCORE/CountDownTimer")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MarginContainer/TextureProgressBar" unique_id=1033517716]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="timeout" from="Player/SlapCooldown" to="Player" method="_on_slap_cooldown_timeout"]
 [connection signal="timeout" from="UI_SCORE/CountDownTimer" to="UI_SCORE" method="_on_count_down_timer_timeout"]
